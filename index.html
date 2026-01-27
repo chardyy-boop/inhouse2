@@ -4,74 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inhouse2 (PIPE) Quiz</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Inhouse2 (PIPE)</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
-    </div>
+    <div class="background-animation"></div>
 
-    <div class="container">
+    <div id="app" class="glass-container">
         <!-- Start Screen -->
         <div id="start-screen" class="screen active">
-            <h1 class="title">Inhouse2 (PIPE)</h1>
-            <p class="subtitle">Engineering Review Quiz</p>
-
-            <div class="settings">
-                <label class="toggle-switch">
-                    <input type="checkbox" id="randomize-toggle">
-                    <span class="slider"></span>
-                    <span class="label-text">Randomize Questions</span>
-                </label>
+            <h1>Inhouse2 (PIPE)</h1>
+            <p class="subtitle">Engineering Quiz Challenge</p>
+            <div class="info-card">
+                <div class="info-item">
+                    <span class="label">Questions</span>
+                    <span class="value">50</span>
+                </div>
+                <!-- You can add more info here like passing score if needed -->
             </div>
-
             <button id="start-btn" class="btn primary-btn">Start Quiz</button>
         </div>
 
         <!-- Quiz Screen -->
         <div id="quiz-screen" class="screen">
-            <div class="header">
-                <div class="progress-container">
-                    <div class="progress-bar" id="progress-bar"></div>
+            <div class="quiz-header">
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
                 </div>
-                <div class="question-count">Question <span id="current-question-num">1</span> / <span
-                        id="total-questions">50</span></div>
+                <div class="quiz-status">
+                    <span id="question-count">Question 1/50</span>
+                    <span id="score-display">Score: 0</span>
+                </div>
             </div>
 
             <div class="question-container">
-                <h2 id="question-text">Question goes here...</h2>
+                <h2 id="question-text">Question text goes here</h2>
                 <div id="options-container" class="options-grid">
                     <!-- Options will be injected here -->
                 </div>
             </div>
 
-            <div class="footer">
+            <div class="quiz-footer">
                 <button id="prev-btn" class="btn secondary-btn" disabled>Previous</button>
+                <div class="spacer"></div>
                 <button id="next-btn" class="btn primary-btn">Next</button>
-                <button id="submit-btn" class="btn success-btn hidden">Submit Quiz</button>
+                <button id="finish-btn" class="btn success-btn hidden">Finish</button>
             </div>
         </div>
 
         <!-- Result Screen -->
         <div id="result-screen" class="screen">
-            <h1 class="result-title">Quiz Completed!</h1>
+            <h2>Quiz Completed!</h2>
             <div class="score-card">
                 <div class="score-circle">
-                    <span id="score-percentage">0%</span>
+                    <span id="final-score">0</span>
+                    <span class="total">/ 50</span>
                 </div>
-                <p class="score-text">You scored <span id="score-value">0</span> out of <span
-                        id="total-score-questions">0</span></p>
+                <p id="percentage-display">0%</p>
             </div>
-
             <div class="result-actions">
-                <button id="restart-btn" class="btn primary-btn">Take Again</button>
+                <button id="restart-btn" class="btn primary-btn">Take Quiz Again</button>
             </div>
         </div>
     </div>
