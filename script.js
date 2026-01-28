@@ -295,11 +295,27 @@ function loadQuestion() {
     questionText.innerHTML = q.question;
     optionsContainer.innerHTML = '';
 
+    const hasAnswered = userAnswers[currentQuestion] !== null;
+
     q.options.forEach((option, index) => {
         const btn = document.createElement('div');
         btn.classList.add('option-btn');
-        if (userAnswers[currentQuestion] === index) {
-            btn.classList.add('selected');
+
+        // Restore state if already answered
+        if (hasAnswered) {
+            if (index === q.correct) {
+                btn.classList.add('correct');
+            }
+            if (userAnswers[currentQuestion] === index && index !== q.correct) {
+                btn.classList.add('incorrect');
+            }
+            // Add selected style simply to show what was picked if not using correct/incorrect logic purely
+            // But here we want to show right/wrong.
+            // If we want to strictly follow "show correct answer", we should mark the correct one.
+            // And if the user picked wrong, mark theirs wrong.
+
+            // Disable click
+            btn.style.pointerEvents = 'none';
         }
 
         btn.innerHTML = `
@@ -307,7 +323,11 @@ function loadQuestion() {
             <span class="option-text">${option}</span>
         `;
 
-        btn.onclick = () => selectAnswer(index);
+        // Only add click listener if not answered
+        if (!hasAnswered) {
+            btn.onclick = () => selectAnswer(index);
+        }
+
         optionsContainer.appendChild(btn);
     });
 
@@ -315,15 +335,23 @@ function loadQuestion() {
 }
 
 function selectAnswer(index) {
+    if (userAnswers[currentQuestion] !== null) return; // Prevent changing answer
+
     userAnswers[currentQuestion] = index;
+    const q = quizQuestions[currentQuestion];
 
     // UI update for selection
     const options = document.querySelectorAll('.option-btn');
     options.forEach((opt, i) => {
-        if (i === index) {
-            opt.classList.add('selected');
-        } else {
-            opt.classList.remove('selected');
+        // Disable all buttons
+        opt.style.pointerEvents = 'none';
+
+        if (i === q.correct) {
+            opt.classList.add('correct');
+        }
+
+        if (i === index && i !== q.correct) {
+            opt.classList.add('incorrect');
         }
     });
 }
