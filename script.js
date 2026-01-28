@@ -1,389 +1,482 @@
 const questions = [
     {
-        question: "Carnot engine operates between two temperature reservoirs maintained at 200 deg. C and 20 deg. C respectively. If the desired output of the engine is 15 KW. Determine the efficiency of the engine.",
-        options: ["38 %", "40 %", "45 %", "30 %"],
+        question: "The maximum demand of a certain power station in the country is 92 MW. The daily load curve is described as follows: Time (hours: 0-6 6-8 8-12 12-14 14-18 18-22 22-24 Load (M): 48 60 72 60 84 96 48. What is the use factor of a standby equipment rated at 30 MW that takes up all load in excess of 72 MW?",
+        options: ["0.60", "0.70", "0.90", "0.50"],
         correct: 0
     },
     {
-        question: "The ultimate analysis of a coal is 75% carbon, 5% hydrogen, 3% oxygen, 2% nitrogen, and the rest ash. Atmospheric air is 16°C and the standard pressure. The energy required to raise the combustion products (from 1 lbm of coal) 1ºF is 2.92 Btu/°F. How much is the theoretical temperature of the combustion products in deg. F ?",
-        options: ["5366", "3515", "4497", "3257"],
+        question: "A diesel (Otto?) power plant with engine cylinder has a bore of 18 cm and stroke of 40 cm. If the volumetric compression is 1800 cm³, find the engine efficiency in percent.",
+        options: ["56.7", "75.34", "53.14", "47.98"],
+        correct: 2
+    },
+    {
+        question: "Determine the theoretical power in kW required for the Isothermal compression of 80 cu. m/min of air from 100 to 900 kPa.",
+        options: ["293", "358", "432", "325"],
         correct: 0
     },
     {
-        question: "A mass and volume of 300 kPa, 80 deg. C and 0.07 cubic meter, respectively. The gas undergoes irreversible adiabatic process to a final pressure of 300 kPa and final volume of 0.10 cu. m, during which the work done on the gas is 25 kJ. Determine the gas constant.",
-        options: ["0.238", "0.325", "0.486", "0.352"],
+        question: "A coal fired power plant gave the following proximate analysis: 1.6% moisture, 15.7% ash, 27.8% volatile matter and 54.9% fixed carbon. Calculate its ash percent on a dry basis.",
+        options: ["16.00", "14.00", "12.00", "10.00"],
         correct: 0
     },
     {
-        question: "The ultimate analysis of a coal is 75% carbon, 5% hydrogen, 2% nitrogen, and the rest ash. Atmospheric air is 16°C and the standard pressure. The energy required to raise the combustion products (from 1 kg of coal) 16°℃ is 12.22 kJ/K. How much is the theoretical temperature of the combustion products in deg. C?",
-        options: ["2836.72", "3246.61", "1576.67", "2490.8"],
+        question: "Determine the relative air to fuel ratio of a butane-fueled S.I engine operating with equivalence ratio of 0.85. Assume the fuel is fully burned within the cylinder.",
+        options: ["1.18", "2.31", "1.11", "3.29"],
+        correct: 0
+    },
+    {
+        question: "An internal combustion engine with an A/F ratio of 14.5 uses fuel with a heating value of 19,000 Btu/lb fuel. The engine produces a brake power output of 455 bhp while consuming 92 lbs of fuel during a 32-minute period of operation. The indicated thermal efficiency is found to be 40 percent. Calculate the required air flow in lb air/min.",
+        options: ["41.68", "34.56", "53.6", "32.7"],
+        correct: 0
+    },
+    {
+        question: "An internal combustion engine uses 9 pounds of air per minute at 1205 pm. The engine requires 0.351 lb/hr to produce a unit indicated power output of 1 ihp. The AF ratio is 15 to 1, the indicated thermal efficiency is 39 percent, and the mechanical efficiency is 83 percent. Find the heating value of the fuel used in Btu/lb fuel.",
+        options: ["18,591", "16,742", "17,608", "15,308"],
+        correct: 0
+    },
+    {
+        question: "A fuel oil has the following ultimate analysis: 85.43% carbon, 11.31% hydrogen, 2.7% oxygen, 0.34% sulfur, and 0.22% nitrogen. The oil is burned with 60% excess air. At standard temperature of 60°F, the combustion product volumes per pound of fuel is 297.7 ft³. At 600 deg. F, what is the volume of dry flue gases that will be produced in ft³?",
+        options: ["563.4", "234.6", "716.54", "432.5"],
+        correct: 0
+    },
+    {
+        question: "Gas mixture has the following volumetric analysis: 40% He, 15% O2, 20% N2 and 15% CO2. Find the gas constant of the mixtures.",
+        options: ["0.543", "0.447", "0.314", "0.328"],
+        correct: 1
+    },
+    {
+        question: "The stack of a Coal Plant is 250m high 5m diameter emits 1000 kg/s of 100 deg. C gases into the 5 deg. C air. The prevailing wind velocity is 60 kh at atmospheric condition. Calculate the stack gas exit velocity in kph.",
+        options: ["194", "206", "275", "132"],
+        correct: 0
+    },
+    {
+        question: "The gases mixed has the following partial pressure: 30 Kpa Helium, 35 Kpa O2 and 35 Kpa H2. Find the percent mass of O2.",
+        options: ["85.49", "74.6", "82.7", "72.4"],
+        correct: 0
+    },
+    {
+        question: "A 32m high smoke stack of a certain power station discharges hot gases at 350 deg. C when the ambient temperature is 25 deg. C. If 15 kg of air has been supplied per kg of coal burned, determine the equivalent height in meters of hot gases column.",
+        options: ["30.72", "35.23", "37.32", "28.67"],
+        correct: 0
+    },
+    {
+        question: "A coal has an ultimate analysis of 80% C, 4% H, 2% O2, and the rest ash. The flue gases are 15.6 deg. C and 101.3 kPa when sampled, and are 80% N2, 12% CO2, 7% O2, and 1% CO by volume. Determine the amount of air in percent required to burn 1 kg of coal under these conditions.",
+        options: ["12.65", "11.45", "14.97", "19.52"],
+        correct: 2
+    },
+    {
+        question: "A fuel oil has the following ultimate analysis: 85.43% carbon, 11.31% hydrogen, 2.7% oxygen, 0.34% sulfur, and 0.22% nitrogen. The oil is burned with 60% excess air. At 600 deg. F, find the free hydrogen in percent.",
+        options: ["10.97", "19.23", "14.23", "12.54"],
+        correct: 0
+    },
+    {
+        question: "A coal is 65% carbon by weight. During combustion, 3% of the coal is lost in the ash pit. Combustion uses 9.87 lbm of air per pound of fuel. The flue gas analysis is 81.5% nitrogen, 9.5% carbon dioxide, and 9% oxygen. Find the actual percent carbon due to coal lost in the ash pit.",
+        options: ["43.56", "52.67", "63.05", "72.52"],
+        correct: 2
+    },
+    {
+        question: "The dry exhaust gas from oil engine has the following gravimetric analysis: CO2 = 21.6%, O2 = 4.2%, N2 = 74.2%. Specific heats at constant pressure for each component of the exhaust gas in Kcal/kg °C are: CO2 = 0.203, O2 = 0.219, N2 = 0.248. Calculate the specific heat at constant volume of the gas in kJ/kg-K if k = 1.36.",
+        options: ["0.631", "0.542", "0.729", "0.871"],
+        correct: 2
+    },
+    {
+        question: "The ultimate analysis of a coal is 75% carbon, 5% hydrogen, 3% oxygen, 2% nitrogen, and the rest ash. Atmospheric air is 16°C and the standard pressure. How much is the lower heating value of the fuel in kJ/kg?",
+        options: ["30,242.27", "45,535.65", "28,678.42", "35,456.54"],
+        correct: 0
+    },
+    {
+        question: "If 6.8 kg/h of propane (C3H8, MW = 44.097) is burned stoichiometrically in air. What is the volume of dry carbon dioxide (CO2, MW = 44.011) in CFM formed after cooling to 21 deg. C and 101 kPa?",
+        options: ["6.60", "7.90", "4.25", "5.87"],
+        correct: 0
+    },
+    {
+        question: "A 300 MW thermal power station is to supply power to a system having maximum and minimum demand of 240 MW and 180 MW respectively in a year. Assuming the load duration curve to be straight line, find the load factor.",
+        options: ["0.875", "0.751", "0.986", "0.651"],
+        correct: 0
+    },
+    {
+        question: "A 300 MW thermal power station is to supply power to a system having maximum and minimum demand of 240 MW and 180 MW respectively in a year. Assuming the load duration curve to be straight line, find the capacity factor.",
+        options: ["0.87", "0.56", "0.84", "0.72"],
+        correct: 0
+    },
+    {
+        question: "A certain small scale power plant operates 4 hours a day, 40 weeks a year. If on average the plant is not available for 5 hours a week for scheduled and unscheduled maintenance, what is the utilization factor of the plant?",
+        options: ["0.13", "0.22", "0.19", "0.21"],
+        correct: 0
+    },
+    {
+        question: "A certain small scale power plant operates 4 hours a day, 40 weeks a year. If on average the plant is not available for 5 hours a week for scheduled and unscheduled maintenance, what is the availability factor of the plant?",
+        options: ["0.84", "0.76", "0.97", "0.84"],
+        correct: 2
+    },
+    {
+        question: "The mass of air in a room 3 x 5 x 20 m is known to be 350 kg. Determine the specific weight of air in N/m³.",
+        options: ["11.45", "12.54", "10.52", "15.46"],
+        correct: 0
+    },
+    {
+        question: "The 34,000 hp of internal power of an axial air compressor having has inlet conditions of 14.5 psia and 66°F and discharge conditions of 162 psia and 648°F. Calculate the isentropic discharge temperature in deg. R",
+        options: ["1209.34", "1161.45", "1048.22", "10456.8"],
+        correct: 2
+    },
+    {
+        question: "In a Rankine cycle, operates with steam at 600 psia and 850°F from the boiler and a condenser pressure of 1 inch Hg absolute. Enthalpies are h4 = 49.4 Btu/lb, h1 = 1435.4 Btu/lb, s1 = s2 = 1.6559 Btu/lb-R, h2 = 890.0 Btu/lb, h3 = 47.1 Btu/lb, s4 = s3 = 0.09146. Determine the heat supplied in Btu/lb.",
+        options: ["1386.0", "1815.6", "1408.5", "1252.6"],
+        correct: 0
+    },
+    {
+        question: "In an Otto cycle the pressure and temperature at the beginning of the compression stroke is 16 psia and 76°F with a specific volume of 14.2 ft³/lb. At the end of compression, the specific volume is 2.2 ft³/lb. The heat supplied to the cycle is 355 Btu/lb. Calculate the thermal efficiency of the cycle.",
+        options: ["52.55", "50.43", "54.25", "62.4"],
+        correct: 0
+    },
+    {
+        question: "0.60 kg of air are contained in a perfectly insulated, rigid enclosure. The ambient conditions outside the enclosure are 95 KPa and 20°C. The air inside the enclosure is initially at 200 KPa and 20°C. Subsequently, an internal impeller within the enclosure raises the air's pressure to 230 KPa through a shaft from an external motor with a motor efficiency of 65%. What is the temperature in deg. F inside the enclosure after the pressure is increased?",
+        options: ["143.5", "151.2", "147.11", "132.6"],
+        correct: 2
+    },
+    {
+        question: "In a Rankine cycle, saturated water at 252°F (v = 0.018001 ft³/lb, h = 219.59 Btu/lb, P = 29.6 psia) enters a feed pump and is discharge at 1210 psia with a pump efficiency is 65 percent and the mass rate is 126,000 lb/hr. Find the water horsepower.",
+        options: ["145.5", "174.6", "194.71", "120.52"],
+        correct: 2
+    },
+    {
+        question: "A reversed Carnot uses 1 lb of air is to constitute as refrigerating cycle between temperatures limits of 144 F and 41F. The isothermal expansion ratio for the cycle is 3.1. The pressure at the start of isothermal expansion is 50 psia. Calculate the heat rejected by the working substance in Btu/lb.",
+        options: ["42", "34", "83", "44"],
+        correct: 2
+    },
+    {
+        question: "Calculate the approximate enthalpy (in Btu/lb) of vapor having a steam temperature of 40°C.",
+        options: ["1107.80", "1456.52", "2109.4", "2018.9"],
+        correct: 0
+    },
+    {
+        question: "A certain plant that operates in an ideal Rankine reheat cycle has steam at 1200 psia and 1060°F from the boiler. After expansion in the turbine to 90 psia, the steam is reheated to a temperature of 950°F. Condenser pressure is maintained at one inch of mercury absolute. h1 = 1534.7 Btu/lb, h2 = 1219.3 Btu/lb, h3 = 1506.5 Btu/lb, h4 = 1029.0 Btu/lb, h5 = 47.1, h6 = 51.2 Btu/lb. Calculate the heat added in Btu/lb.",
+        options: ["1770.7", "1249.6", "1394.6", "1097.8"],
+        correct: 0
+    },
+    {
+        question: "A mixture of 1 kmol of gaseous methane and 2 kmol of oxygen initially at NTP burns completely in a closed rigid container. Heat transfer occurs until the products are cooled to 900 K. If the reactants and products each form ideal gas mixtures, what is the final pressure in kPa?",
+        options: ["355.516", "245.678", "310.178", "120.789"],
+        correct: 2
+    },
+    {
+        question: "Water at 25°C has a saturation vapor pressure of 3.1504 KPa. Liquid compound B (molecular weight of 52.135) at 25°C has a saturation vapor pressure of 7.2601 KPa. If 75 g of liquid water are mixed with 45g of liquid compound B, what is the resulting vapor pressure of the solution in kPa?",
+        options: ["2.56", "4.56", "3.85", "5.42"],
+        correct: 2
+    },
+    {
+        question: "The vapor pressure of zinc is given by the equation: ln(P) (solid) = -15,780/T - 0.755 ln(T) + 19.25 and ln(P) (liquid) = -15,650/T - 1.255 ln(T) + 21.79, where T is absolute temperature in kelvin. What should be the triple point of zinc in deg. C?",
+        options: ["175.44", "126.73", "173.44", "183.54"],
+        correct: 0
+    },
+    {
+        question: "The vapor pressure of zinc is given by the equation: ln(P) (solid) = -15,780/T - 0.755 ln(T) + 19.25 and ln(P) (liquid) = -15.650/T - 1.255 ln(T) + 21.79, where T is absolute temperature in kelvin. What is the boiling temperature of zinc in deg. C at 5 x 10⁻⁴ atm?",
+        options: ["468.8", "541.6", "432.5", "319.7"],
+        correct: 0
+    },
+    {
+        question: "A chef attended a cooking competition where the average atmospheric pressure is 87 kPa. If the elevation is at 1000 m from sea level, compute the temperature in deg. C at which the water in uncovered pan will boil.",
+        options: ["96", "45", "65", "54"],
+        correct: 0
+    },
+    {
+        question: "An air standard engine operates on Carnot cycle which have the ratio of maximum and minimum volume of 19. Given that the lower temperature of the cycle is fixed at 100 deg. C, determine the MAXIMUM thermal efficiency of the cycle if the compression ratio of adiabatic compression is variable.",
+        options: ["49.50", "42.54", "52.35", "62.34"],
+        correct: 0
+    },
+    {
+        question: "1 kg of air at NTP is compressed in an Otto cycle with a compression ratio of 7. During the combustion process, 954.66 kJ of heat is added to the air. Determine the maximum efficiency of a Carnot cycle operating between the maximum and minimum temperatures of the Otto cycle.",
+        options: ["85.08", "65.67", "72.35", "82.56"],
+        correct: 0
+    },
+    {
+        question: "A facility handling liquid methane at 115 K and 5 MPa needs to reduce its pressure to 1 MPa. Instead of throttling, an engineer proposes using a turbine for this process to generate power. Calculate the potential annual savings if the turbine operates continuously at a rate of P15.00/kWh. At 5 MPa, 115K: h = 232.2 KJ/kg, s = 4.9945 KJ/kg-K, p = 422.15 kg/m³ At 1 MPa: h = 222.8 KJ/kg.",
+        options: ["140,203,800", "130,646,700", "103,566.67", "208,565.75"],
+        correct: 0
+    },
+    {
+        question: "An open vertical cylindrical vessel, 2 m in diameter and 4 m high is filled with water to the top. If rotated on its own vertical axis in order to discharge a quantity of water to uncover a circular area at the bottom of a vessel 1 m in diameter. Calculate the volume of water left in the cylinder after rotation.",
+        options: ["167 cu.ft", "185 cu.ft", "186 cu.ft", "152 cu.ft"],
+        correct: 0
+    },
+    {
+        question: "A Carnot heat engine converts one-fifth of the heat input into power output. If the temperature of the sink is reduced by 100 deg. C, its thermal efficiency is doubled. Determine the temperature of the source in deg. R.",
+        options: ["891.7", "781.6", "900.6", "854.7"],
+        correct: 2
+    },
+    {
+        question: "A piston-cylinder device contains 0.05 m³ of gas initially at 200 KPa. At this state, a linear spring that has a spring constant of 150 KN/m is touching the piston but exerting no force on it. Now heat is transferred to the gas, causing the piston to rise and to compress the spring until the volume inside the cylinder doubles. If the cross-sectional area of the piston is 0.25 m², determine the total work done by the gas in Btu.",
+        options: ["11.67", "10.78", "12.32", "13.45"],
+        correct: 2
+    },
+    {
+        question: "Spark Ignition engine is proposed to have a compression ratio of 10 while operating with a low temperature of 200 deg. C and a low pressure of 200 kPa. Determine the temperature after compression in K.",
+        options: ["1188", "1302", "1054", "1290"],
+        correct: 0
+    },
+    {
+        question: "The forced convection coefficient for a hot fluid flowing over a cool surface is 0.12 kW per SQM. The fluid temperature upstream from the cool surface is 394K and the surface is held at 285K. Determine the heat transfer per unit surface area from the fluid to the surface.",
+        options: ["13.08", "12.90", "15.46", "12.54"],
+        correct: 0
+    },
+    {
+        question: "A diesel cycle with a compression ratio of 18, operates on air With a low pressure of 200 kPa and a low temperature of 200 deg. C. Determine the pressure after isentropic compression in MPa.",
+        options: ["12.45", "10.54", "11.44", "14.21"],
+        correct: 2
+    },
+    {
+        question: "At the start of compression an ideal Diesel cycle using air as working substance has a pressure of 16 psia, a temperature of 77°F and a specific volume of 14.2 ft³/lb. If the compression ratio of 16 and heat addition is 355 Btu per pound, calculate the pressure after expansion of the cycle in psia.",
+        options: ["32.45", "34.56", "39.57", "38.62"],
+        correct: 2
+    },
+    {
+        question: "A body at 20 deg. C is set out on a roof top during the night. The body 'sees' nothing but the sky which has an effective temperature of 120 K. Determine the heat transfer rate in W from the body to the sky if the body temperature is maintained at 22 deg. C, the surface emissivity of the body is equal to 0.90, and none of the radiation going out of the body comes back.",
+        options: ["298", "403", "309", "365"],
         correct: 3
     },
     {
-        question: "A mass of 0.25 kg of an ideal gas has a pressure, temperature and volume of 300 kPa, 80 deg. C and 0.07 cubic meter, respectively. The gas undergoes irreversible adiabatic process to a final pressure of 300 kPa and final volume of 0.10 cu. m, during which the work done on the gas is 25 kJ. Determine the FINAL temperature in K.",
-        options: ["505", "708", "627", "808"],
-        correct: 0
-    },
-    {
-        question: "In a particular installation, 30% excess air at 103 kPa and 40°C is needed for the combustion of methane. Determine the volume of nitrogen (MW = 28.016) in m3/min passes through the furnace if methane is burned at the rate of 31 L/s.",
-        options: ["18.18", "12.56", "10.67", "17.54"],
-        correct: 0
-    },
-    {
-        question: "A mass of 0.25 kg of an ideal gas has a pressure, temperature and volume of 300 kPa, 80 deg. C and 0.07 cubic meter, respectively. The gas undergoes irreversible adiabatic process to a final pressure of 300 kPa and final volume of 0.10 cu. m, during which the work done on the gas is 25 kJ. Determine Cv.",
-        options: ["0.897", "0.974", "0.658", "0.585"],
+        question: "A dual cycle is used to model a piston engine. The engine intakes atmospheric air at 20 deg. C and 100 kPa compresses it to 10 MPa, and then combustion increases the pressure to 20 MPa. For a cutoff ratio of 2, determine the temperature after the isentropic compression in K",
+        options: ["1406", "1154", "1092", "1320"],
         correct: 2
     },
     {
-        question: "In a certain coal-fired power plant, a bituminous coal has the following composition: C = 75% H = 5% O = 7% N = 1.3% S = 3.6% Ash = 8.2% W = 3.4%. Determine the theoretical weight of nitrogen in lb/lb of coal.",
-        options: ["4.456", "5.262", "7.526", "3.406"],
-        correct: 2
-    },
-    {
-        question: "The peak load on a power plant is 60 MW. The loads having a maximum demand of 30 MW, 20 MW, 10 MW and 14 MW are connected to the power plant. The capacity of the power plant is 80 MW and the annual load factor is 0.50. Determine the energy supplied per year in kW-hr.",
-        options: ["2.63E8", "3.52E8", "5.65E8", "4.56E8"],
-        correct: 0
-    },
-    {
-        question: "The peak load on a power plant is 60 MW. The loads having maximum demands of 30 MW, 20 MW, 10 MW and 14 MW are connected to the power plant. The capacity of the power plant is 80 MW and the annual load factor is 0.50. Determine the ratio diversity factor over demand factor.",
-        options: ["1.52", "1.83", "1.75", "2.45"],
-        correct: 0
-    },
-    {
-        question: "Oxygen at 20 MPa is to be stored in a steel vessel at 20°C. The capacity of the vessel is 0.04 cubic meter. Assuming that oxygen is a perfect gas and the vessel is protected against excessive pressure by a fusible plug which will melt if the temperature rises too high. At what temperature in deg. C must the plug melt to limit the pressure in the vessel to 24 MPa?",
-        options: ["92.8", "78.6", "82.7", "72.9"],
-        correct: 1
-    },
-    {
-        question: "A 300 MW thermal power station is to supply power to a system having maximum and minimum demand of 240 MW and 180 MW respectively in a year. Assuming the load duration curve to be straight line, find the capacity (load?) factor.",
-        options: ["0.87", "0.56", "0.97", "0.99"],
-        correct: 0
-    },
-    {
-        question: "A Subdivision has twenty identical houses. The maximum possible power consumption in each house is 7 kW. However, the people living in each are saving electricity consumption in which the actual power consumption is 3 kW. If the maximum power consumption of the subdivision is 50 kW, what is the coincidence factor?",
-        options: ["0.83", "0.94", "0.75", "0.61"],
-        correct: 0
-    },
-    {
-        question: "A 200 m3 rigid tank contains compressed air at 1.2 MPa and 300°K. Determine how much work in Btu/lb can be obtained from this air if the environment condition is 100 kPa and 300°K.",
-        options: ["45", "67", "58", "82"],
-        correct: 2
-    },
-    {
-        question: "The maximum demand of certain power station in the country is 92 MW. The daily load curve is described as follows: <br>Time (hours): 1(0-6) 2(6-8) 3(8-12) 4(12-14) 5(14-18) 6(18-22) 7(22-24)<br>Load (MW): 1(48) 2(60) 3(72) 4(60) 5 (84) 6(96) 7(48)<br>Calculate the load factor of a standby equipment rated at 30 MW that takes up all load in excess of 72 MW.",
-        options: ["0.75", "0.56", "0.65", "0.45"],
-        correct: 0
-    },
-    {
-        question: "A cubical tank 1 m on a side, contains a mixture of 1.8 kg of nitrogen and 2.8 kg of an unknown gas. The mixture pressure and temperature are 290 kPa and 340°K. Determine the molecular weight of the unknown gas.",
-        options: ["82", "68", "73", "79"],
-        correct: 2
-    },
-    {
-        question: "A power station supplies the following to the consumers:<br>Time (hours): 1(0-6) 2(6-10) 3(10-12) 4(12-16) 5(16-20) 6(20-22) 7(22-24)<br>Load (MW): 1(30) 2(70) 3(90) 4(60) 5 (100) 6(80) 7(60)<br>What is the load factor of the plant?",
-        options: ["0.65", "0.76", "0.82", "0.73"],
-        correct: 0
-    },
-    {
-        question: "Find the flow in m3/s in a 15 m wide rectangular channel for which the critical depth is 3 m.",
-        options: ["244.12", "306.56", "290.42", "309.45"],
-        correct: 0
-    },
-    {
-        question: "A power station supplies the following to the consumers:<br>Time (hours): 1(0-6) 2(6-10) 3(10-12) 4(12-16) 5(16-20) 6(20-22) 7(22-24)<br>Load (MW): 1(30) 2(70) 3(90) 4(60) 5 (100) 6(80) 7(60)<br>What is the load factor of a standby equipment of 30 MW capacity if it takes up all loads above 70 MW.",
-        options: ["0.75", "0.60", "0.52", "0.89"],
-        correct: 0
-    },
-    {
-        question: "A piston cylinder contains 6 kg of air. During a compression process, 100 kJ of heat is removed while 250 kJ of work is done on the air. Determine the change in internal energy of the air in kJ/kg.",
-        options: ["25", "40", "32", "19"],
-        correct: 0
-    },
-    {
-        question: "A power station supplies the following to the consumers:<br>Time (hours): 1(0-6) 2(6-10) 3(10-12) 4(12-16) 5(16-20) 6(20-22) 7(22-24)<br>Load (MW): 1(30) 2(70) 3(90) 4(60) 5 (100) 6(80) 7(60)<br>What is the use factor of a standby equipment of 30 MW capacity if it takes up all loads above 70 MW.",
-        options: ["0.75", "0.60", "0.52", "0.89"],
-        correct: 0
-    },
-    {
-        question: "A cylinder piston apparatus contains 0.5 kg of air initially at 27°C and 100 kPa. The air is compressed polytropically to a final pressure of 500 kPa and final temperature of 127°C, determine the polytropic exponent for this process.",
-        options: ["1.33", "1.22", "1.56", "1.13"],
-        correct: 1
-    },
-    {
-        question: "An unknown hydrocarbon fuel, CnHm, was allowed to react with air. An ORSAT was made of a representative sample of the product gases with the following result: CO2 = 12.1% O2 = 3.8% and CO = 0.8%. Determine the composition of the fuel.",
-        options: ["C13H23", "C10H32", "C12H24", "C4H8"],
-        correct: 0
-    },
-    {
-        question: "The prototype vehicle features a hybrid drivetrain with a Stirling engine that operates between the temperature limit of 35°C and 790°C. The pressure of the working medium at the beginning of isothermal compression is 100 kPa with a compression ratio of 6. The heat is supplied at 950 kJ/min with a regenerator efficiency of 78%. Determine the net work done in HP.",
-        options: ["12.53", "13.5", "11.71", "14.52"],
-        correct: 2
-    },
-    {
-        question: "Four liters of octane gasoline weigh 3.91 kg. Determine the volume of the air required for complete combustion at STP in L.",
-        options: ["45,731", "34.567", "40,506", "43,214"],
-        correct: 0
-    },
-    {
-        question: "The prototype vehicle features a hybrid drivetrain with a Stirling engine that operates between the temperature limit of 35°C and 790°C. The pressure of the working medium at the beginning of isothermal compression is 100 kPa with a compression ratio of 6. The heat is supplied at 950 kJ/min with a regenerator efficiency of 78%. Determine the thermal efficiency of the cycle.",
-        options: ["32,56", "55.16", "10.17", "19.96"],
-        correct: 1
-    },
-    {
-        question: "An air is compressed reversibly in a cylinder from 16 psia to final pressure of 64 psia. The initial temperature and specific volume are 62°F and 1 cu. Ft. Find the work required in BTU if the process is isothermal.",
-        options: ["4.10", "3.24", "2.14", "5.42"],
-        correct: 0
-    },
-    {
-        question: "A tank contains Helium for which heated from 85°F to a final temperature of 210°F in an unknown process. Find the change of internal energy in BTU/lb.",
-        options: ["94.02", "82.57", "90.7", "81.8"],
-        correct: 0
-    },
-    {
-        question: "An Ideal gas at a pressure of 500 kPa and a temperature of 75°C is contained in a cylinder with a volume of 750 m3. Some of the hgas is released so that the pressure in the cylinder drops to 250 kPa. Determine the mass (in lbm) of the gas remaining in the cylinder.",
-        options: ["6096", "5054", "8098", "2406"],
-        correct: 1
-    },
-    {
-        question: "In an Ideal Brayton Cycle, the five-step turbine is equipped with a reheater that increases the temperature of the low-pressure turbine inlet flow to the temperature of the high-pressure turbine inlet flow. For the ficed given states of the first turbine inlet and the fifth turbine outlet, determine the pressure of the reheater that maximizes the specific network output of the turbine if the total pressure ratio is 16.",
-        options: ["1.98", "2.09", "3.09", "1.74"],
-        correct: 0
-    },
-    {
-        question: "A 5 lbs helium gas has 25 BTU of heat are added at constant volume when initial temperature is 100°F, find the final temperature in °F.",
-        options: ["109.56", "119.45", "190.43", "106.65"],
+        question: "A constant cross-section, rectangular fin 6 cm long, with a base of 1 cm x 2 mm is used to dissipate heat from a 400 deg. C surface. The convection coefficient is 20 Watt per square meter per Kelvin (W/m²-K) and the conductivity is 40 W/m-K. The temperature of the air surrounding the fin is 35 deg. C, Determine the effectiveness of the fin if the heat transfer from the fin is 6.5 W.",
+        options: ["34.56", "52.98", "39.78", "44.52"],
         correct: 3
     },
     {
-        question: "If a hydrogen gas is compressed to an insulated cylinder from 22℃ at 102 KPa and 0.25 m3 to 0.01 m3.",
-        options: ["235.65 KJ", "109.89 KJ", "170.57 kJ", "150.45 kJ"],
+        question: "At the start of compression an ideal Diesel cycle using air as working substance has a pressure of 16 psia, a temperature of 77°F and a specific volume of 14.2 ft³/lb. if the compression ratio of 16 and heat addition is 355 Btu per pound, calculate the temperature after expansion of the cycle in deg. R",
+        options: ["1245.65", "1097.5", "1327.54", "1340.65"],
         correct: 2
-    },
-    {
-        question: "The calorific value of gaseous decane is 69 MJ/kg. Determine the lower heating value of decane gas in MJ/kg if the enthalpy of water at 25°C is 2400 kJ/kg and for decane is 358 kJ/kg.",
-        options: ["56.54", "47.63", "65.65", "60.45"],
-        correct: 2
-    },
-    {
-        question: "An air compressor with compression efficiency of 84% has an internal power of 66 hp and an overall pressure ratio of 11. Inlet conditions are 14.7 psia and 61°F. Determine isentropic discharge temperature in °R.",
-        options: ["1650.50", "1897.45", "1033.66", "1208.32"],
-        correct: 2
-    },
-    {
-        question: "In a particular installation, 30% excess air at 103 kPa and 40°C is needed for the combustion of methane. How much of nitrogen (MW: 28.016) in kg/min passes through the furnace if methane is burned at the rate of 31 L/s?",
-        options: ["23.45", "18.46", "20.15", "20.67"],
-        correct: 2
-    },
-    {
-        question: "A steam Carnot cycle operates between 340°C and 38 °C. The turbine and compressor efficiencies are 90% and 80% respectively. Solve for actual enthalpy in BTU/lb at turbine exit. Enthalpies at each point (Corner): h1 = 1594.5 kJ/kg, h2 = 2621.9 kJ/kg, h3 = 1649 kJ/kg, and h4 = 1128.3 kJ/kg.",
-        options: ["560.7", "890.45", "750.68", "809.45"],
-        correct: 2
-    },
-    {
-        question: "A certain Carnot power cycle uses 1 lb of air as a working substance is assumed to operate at temperature limits of 605°F and 75°F. The pressure at the beginning and end of the isothermal expansion process are 520 psia and 180 psia, respectively. Determine the heat supplied to cycle in BTU/lb.",
-        options: ["89.6", "45.7", "65.5", "77.4"],
-        correct: 3
-    },
-    {
-        question: "A heat source added 1060 BTU/lb of a working substance in a closed thermos dynamic power cycle. The sink receives 653 BTU/lb of working substance. The system requires 6.4 BTU/lb of substance pumped. What is the thermal efficiency of the cycle?",
-        options: ["45.67", "38.39", "83.45", "78.34"],
-        correct: 1
-    },
-    {
-        question: "A certain manufacturer makes the following claims concerning the operation of a steam turbine: under adiabatic conditions, steam will enter the turbine at an absolute pressure of 3 MPa and 350°C and exit as saturated vapor at 75 kPa (2663 kJ/kg). If the mass flow rate of the steam is 1 kg/s, determine the power output of the turbine in kW. The properties of steam at 3 MPa and 350 °C are h = 3115.3 kJ/kg, s = 6.7428 kJ.kg-K",
-        options: ["324.5", "543.5", "298.6", "452.3"],
-        correct: 3
-    },
-    {
-        question: "In an ideal Brayton Cycle, the five-step turbine is equipped with a reheater that increases the temperature of the low-pressure turbine inlet flow to the temperature of the high-pressure turbine inlet flow. For the fixed given states of the first turbine inlet and the fifth turbine outlet, determine the no. of reheater.",
-        options: ["4", "10", "8", "2"],
-        correct: 0
-    },
-    {
-        question: "Determine the diameter in millimeter of a water droplet at 20° when the pressure within it is 2.0 kPa greater than the outside. Note: The surface tension of water at 20°C is 0.0728 N/m",
-        options: ["0.3", "0.4", "0.2", "0.1"],
-        correct: 2
-    },
-    {
-        question: "In a test laboratory, it was found that the 80 Bhp developed by an engine on test, 45 hp is absorbed by the colling water that is pumped through the water jacket and the radiator. The water enters the top of the radiation at200°F. At that temperature the enthalpy of the water is 168.07 BTU/lb. Water leaves the bottom of the radiator at 190°F and with an enthalpy of 158.03 BTU/lb. What is the water flow rate for a steady state operation in ft3/min?",
-        options: ["2.0973", "3.0455", "5.1098", "4.5068"],
-        correct: 1
-    },
-    {
-        question: "A 200 m3 rigid tank contains compressed air at 1 MPa and 300 K. Determine how much work in BTU can be obtained from this air if the environment conditions are 100 kPa and 300 K.",
-        options: ["450,900", "297,987", "307,596", "265,900"],
-        correct: 3
-    },
-    {
-        question: "In an ideal Brayton Cycle, the six-step turbine is equipped with a reheater that increases the temperature of the low-pressure turbine inlet flow to the temperature of the high-pressure turbine inlet flow. For the fixed given states of the first turbine inlet and the sixth turbine outlet, determine the no. of reheater.",
-        options: ["5", "3", "4", "2"],
-        correct: 0
-    },
-    {
-        question: "An air standard engines operates on Carnot Cycle which have the ratio of maximum and minimum volume of 20. Given that the lower temperature of the cycle is fixed, determine the compression ratio of adiabatic compression if it is variable and work done of the cycle is maximum.",
-        options: ["5.7", "6.2", "9.8", "10.2"],
-        correct: 0
-    },
-    {
-        question: "An air standard engine operates on Carnot Cycle which have the ratio of maximum and minimum volume of 18. Given that the lower temperature of the cycle is fixed at 100°C, determine the maximum network of the cycle is if the compression ratio of adiabatic compression is variable.",
-        options: ["198.32 kJ/kg", "134.86 kJ/kg", "129.28 kJ/kg", "109.47 kJ/kg"],
-        correct: 0
-    },
-    {
-        question: "A facility handling liquid methane at 115 K and 5MPa needs to reduce its pressure to 1 MPa. Instead of throttling, an engineer proses using a turbine for this process to generate power. Calculate the maximum amount of power that can be produced by plant in kWh.yr if the turbine operates continuously at a rate of P15.00/kWh. At 5 MPa, 115 K: h = 232.2 kJ/kg, s = 4.9945 kJ/kg, p = 422.15 kg/m3, At 1 MPa h = 228. kJ/kg.",
-        options: ["9,346,920", "5,584.325", "10,509.89", "8,097.87"],
-        correct: 0
-    },
-    {
-        question: "A 4ft high, 3 ft diameter cylindrical water tank whose top is open to the atmosphere is initially filled with water. Now the discharge plug near the bottom of the tank is pulled out, and waterjet whose diameter is 0.5 in streams out. Determine how long will it take the water level in the tank to drop to 2 ft leve from the bottom in hour.",
-        options: ["0.21", "0.32", "0.16", "0.19"],
-        correct: 0
-    },
-    {
-        question: "An open vertical cylindrical vessel, 2 m in diameter and 4 m high is filled with water to the top. If rotated on its own vertical axis in order to discharge a quantity of water to uncover a circular are at the bottom of a vessel 1 m in diameter. Find the angular speed in rpm.",
-        options: ["97.65", "87.56", "90.56", "82.34"],
-        correct: 0
-    },
-    {
-        question: "A conical vessel with sides inclined 30 with its vertical axis revolved about another axis 1 m from its own and parallel. How many revolutions per minute must it take in order that water poured into it will be entirely discharge by the rotative effect?",
-        options: ["39.36", "43.62", "87.9", "23.5"],
-        correct: 0
     }
 ];
 
-let currentQuestion = 0;
-let score = 0;
-let quizQuestions = [];
-let userAnswers = new Array(questions.length).fill(null);
-
+// DOM Elements
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
-const finishBtn = document.getElementById('finish-btn');
 const restartBtn = document.getElementById('restart-btn');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
-const questionCount = document.getElementById('question-count');
-const scoreDisplay = document.getElementById('score-display');
-const progressFill = document.getElementById('progress-fill');
-const finalScore = document.getElementById('final-score');
-const percentageDisplay = document.getElementById('percentage-display');
+const currentQuestionNum = document.getElementById('current-question-num');
+const totalQuestionsSpan = document.getElementById('total-questions');
+const progressBar = document.getElementById('progress-bar');
+const scoreSpan = document.getElementById('score');
+const totalScoreSpan = document.getElementById('total-score');
+const feedbackMessage = document.getElementById('feedback-message');
+const randomizeToggle = document.getElementById('randomize-toggle');
+const feedbackDiv = document.getElementById('question-feedback');
 
+// Quiz State
+let currentQuestionIndex = 0;
+let quizQuestions = [];
+let userAnswers = []; // Array to store user selected indices, null if not answered
+
+// Event Listeners
 startBtn.addEventListener('click', startQuiz);
 nextBtn.addEventListener('click', nextQuestion);
 prevBtn.addEventListener('click', prevQuestion);
-finishBtn.addEventListener('click', finishQuiz);
-restartBtn.addEventListener('click', restartQuiz);
+restartBtn.addEventListener('click', resetQuiz);
 
 function startQuiz() {
+    const shouldRandomize = randomizeToggle.checked;
+
+    // Create a copy of the questions array
+    quizQuestions = [...questions];
+
+    if (shouldRandomize) {
+        shuffleArray(quizQuestions);
+    }
+
+    // Reset state
+    currentQuestionIndex = 0;
+    userAnswers = new Array(quizQuestions.length).fill(null);
+
+    // Update UI
+    totalQuestionsSpan.textContent = quizQuestions.length;
+
+    // Switch screens
     startScreen.classList.remove('active');
     quizScreen.classList.add('active');
 
-    // User requested randomization
-    quizQuestions = [...questions].sort(() => Math.random() - 0.5);
-    userAnswers = new Array(questions.length).fill(null);
-    currentQuestion = 0;
-    score = 0;
     loadQuestion();
 }
 
 function loadQuestion() {
-    const q = quizQuestions[currentQuestion];
-    questionText.innerHTML = q.question;
+    // Reset button states based on history
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    const userAnswer = userAnswers[currentQuestionIndex];
+    const hasAnswered = userAnswer !== null;
+
+    // Clear feedback initially
+    if (feedbackDiv) {
+        feedbackDiv.textContent = '';
+        feedbackDiv.className = 'question-feedback';
+    }
+
+    // Nav Buttons State
+    prevBtn.disabled = currentQuestionIndex === 0;
+    prevBtn.style.opacity = currentQuestionIndex === 0 ? "0.5" : "1";
+
+    if (currentQuestionIndex === quizQuestions.length - 1) {
+        nextBtn.textContent = "Finish Quiz";
+    } else {
+        nextBtn.textContent = "Next Question";
+    }
+
+    // Only enable next if answered
+    nextBtn.disabled = !hasAnswered;
+    nextBtn.style.opacity = !hasAnswered ? "0.5" : "1";
+
+    // Update Question Number and Text
+    currentQuestionNum.textContent = currentQuestionIndex + 1;
+    questionText.textContent = currentQuestion.question;
+
+    // Update Progress Bar
+    const progress = ((currentQuestionIndex) / quizQuestions.length) * 100;
+    progressBar.style.width = `${progress}%`;
+
+    // Create Options
     optionsContainer.innerHTML = '';
 
-    q.options.forEach((option, index) => {
-        const btn = document.createElement('div');
+    currentQuestion.options.forEach((option, index) => {
+        const btn = document.createElement('button');
         btn.classList.add('option-btn');
-        if (userAnswers[currentQuestion] === index) {
-            btn.classList.add('selected');
+        const prefix = String.fromCharCode(65 + index); // 65 is 'A'
+        btn.textContent = `${prefix}. ${option}`;
+
+        // If this was the selected one (even if correct), mark selected for border
+        if (hasAnswered) {
+            if (index === userAnswer) {
+                btn.classList.add('selected');
+
+                // Show feedback for retained answer
+                if (index === currentQuestion.correct) {
+                    btn.classList.add('correct');
+                    if (feedbackDiv) {
+                        feedbackDiv.textContent = "Correct!";
+                        feedbackDiv.classList.add('correct');
+                    }
+                } else {
+                    btn.classList.add('incorrect');
+                    if (feedbackDiv) {
+                        feedbackDiv.textContent = "Incorrect. The correct answer is highlighted in green.";
+                        feedbackDiv.classList.add('incorrect');
+                    }
+                }
+            }
+
+            // ALWAYS highlight the correct answer if answered
+            if (index === currentQuestion.correct && userAnswer !== currentQuestion.correct) {
+                btn.classList.add('correct');
+            }
         }
 
-        btn.innerHTML = `
-            <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-            <span class="option-text">${option}</span>
-        `;
+        btn.addEventListener('click', () => selectOption(index, btn));
 
-        btn.onclick = () => selectAnswer(index);
         optionsContainer.appendChild(btn);
     });
-
-    updateUI();
 }
 
-function selectAnswer(index) {
-    userAnswers[currentQuestion] = index;
+function selectOption(selectedIndex, selectedBtn) {
+    // Store answer
+    userAnswers[currentQuestionIndex] = selectedIndex;
 
-    // UI update for selection
-    const options = document.querySelectorAll('.option-btn');
-    options.forEach((opt, i) => {
-        if (i === index) {
-            opt.classList.add('selected');
-        } else {
-            opt.classList.remove('selected');
-        }
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    const correctIndex = currentQuestion.correct;
+
+    // Clear previous selection and feedback
+    const allOptions = optionsContainer.querySelectorAll('.option-btn');
+    allOptions.forEach(btn => {
+        btn.classList.remove('selected', 'correct', 'incorrect');
     });
-}
 
-function updateUI() {
-    questionCount.innerText = `Question ${currentQuestion + 1}/${questions.length}`;
-
-    // Progress Bar
-    const progress = ((currentQuestion + 1) / questions.length) * 100;
-    progressFill.style.width = `${progress}%`;
-
-    // Button states
-    prevBtn.disabled = currentQuestion === 0;
-
-    if (currentQuestion === questions.length - 1) {
-        nextBtn.classList.add('hidden');
-        finishBtn.classList.remove('hidden');
-    } else {
-        nextBtn.classList.remove('hidden');
-        finishBtn.classList.add('hidden');
+    if (feedbackDiv) {
+        feedbackDiv.className = 'question-feedback'; // Reset classes
     }
+
+    // UI Effects
+    selectedBtn.classList.add('selected');
+
+    // Immediate feedback
+    if (selectedIndex === correctIndex) {
+        selectedBtn.classList.add('correct');
+        if (feedbackDiv) {
+            feedbackDiv.textContent = "Correct!";
+            feedbackDiv.classList.add('correct');
+        }
+    } else {
+        selectedBtn.classList.add('incorrect');
+        // Highlight correct answer
+        const correctBtn = optionsContainer.children[correctIndex];
+        correctBtn.classList.add('correct');
+
+        if (feedbackDiv) {
+            feedbackDiv.textContent = "Incorrect. The correct answer is highlighted in green.";
+            feedbackDiv.classList.add('incorrect');
+        }
+    }
+
+    // Enable Next Button
+    nextBtn.disabled = false;
+    nextBtn.style.opacity = "1";
 }
 
 function nextQuestion() {
-    if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+        currentQuestionIndex++;
         loadQuestion();
+    } else {
+        showResults();
     }
 }
 
 function prevQuestion() {
-    if (currentQuestion > 0) {
-        currentQuestion--;
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
         loadQuestion();
     }
 }
 
-function finishQuiz() {
-    calculateScore();
+function showResults() {
     quizScreen.classList.remove('active');
     resultScreen.classList.add('active');
 
-    finalScore.innerText = score;
-    const percentage = Math.round((score / questions.length) * 100);
-    percentageDisplay.innerText = `${percentage}%`;
-}
-
-function calculateScore() {
-    score = 0;
-    quizQuestions.forEach((q, index) => {
-        // Find original question index to compare with correct answer
-        // Note: We need to compare user's selected index with the question's correct index
-        // Since q is the question object, q.correct is the index of the correct option
-        if (userAnswers[index] === q.correct) {
+    // Calculate Score
+    let score = 0;
+    userAnswers.forEach((answer, index) => {
+        if (answer === quizQuestions[index].correct) {
             score++;
         }
     });
+
+    scoreSpan.textContent = score;
+    totalScoreSpan.textContent = quizQuestions.length;
+
+    // Feedback
+    const percentage = (score / quizQuestions.length) * 100;
+    if (percentage >= 80) {
+        feedbackMessage.textContent = "Excellent! You've mastered this topic!";
+    } else if (percentage >= 60) {
+        feedbackMessage.textContent = "Good job! Keep practicing.";
+    } else {
+        feedbackMessage.textContent = "Keep studying! You can do better.";
+    }
 }
 
-function restartQuiz() {
+function resetQuiz() {
     resultScreen.classList.remove('active');
     startScreen.classList.add('active');
+}
+
+// Fisher-Yates Shuffle
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
